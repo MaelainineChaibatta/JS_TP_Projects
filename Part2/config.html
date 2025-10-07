@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration du QCM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="config-container">
+    <h1>Configurer ton QCM</h1>
+
+    <form id="config-form">
+      <label>
+        Nombre de questions :
+        <input type="number" id="amount" min="1" max="20" value="5" />
+      </label>
+
+      <label>
+        Catégorie :
+        <select id="category">
+          <option value="">Toutes</option>
+          <option value="9">Culture Générale</option>
+          <option value="18">Informatique</option>
+          <option value="21">Sport</option>
+        </select>
+      </label>
+
+      <label>
+        Difficulté :
+        <select id="difficulty">
+          <option value="">Toutes</option>
+          <option value="easy">Facile</option>
+          <option value="medium">Moyenne</option>
+          <option value="hard">Difficile</option>
+        </select>
+      </label>
+
+      <label>
+        Type :
+        <select id="type">
+          <option value="">Tous</option>
+          <option value="multiple">Choix multiple</option>
+          <option value="boolean">Vrai / Faux</option>
+        </select>
+      </label>
+
+      <button type="submit">Lancer le quiz</button>
+    </form>
+  </main>
+
+  <script src="config.js"></script>
+</body>
+</html>
+
+
