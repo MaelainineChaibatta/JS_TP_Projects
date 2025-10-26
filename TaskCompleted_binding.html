@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="monapp">
+	<label>
+		Text(sans espace) : 
+		<input type="text" v-model="texte">
+	</label>
+	<p v-if="hasSpace" style="color: red; margin-top: 0.5em;">
+		Le texte ne doit pas contenir d espaces!
+	</p>
+
+	<ul>
+		<li>
+			couleur de la police: 
+			<label><input type="radio" v-model="couleur" value="red">Rouge</label>
+			<label><input type="radio" v-model="couleur" value="blue">Bleu</label>
+		</li>
+		<li>
+			afficher/cacher le paragraphe? <input type="checkbox" v-model="visible">
+		</li>
+	</ul>
+	<p v-if="visible" :style="{color : couleur ,fontSize : '1.2rem'}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+	</p>
+
+
+</div>
+
+
+<script>
+	const appli = {
+		data () {
+			return{
+				texte : '',
+				couleur : 'black',
+				visible: true,
+					
+			}
+		},
+		computed: {
+			hasSpace(){
+				return this.texte.indexOf(' ') !== -1;
+			}
+		}
+	};
+	
+Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>
